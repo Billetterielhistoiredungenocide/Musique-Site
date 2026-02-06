@@ -30,12 +30,12 @@ body {
 }
 
 .poster {
-    width: 70%; /* image plus petite */
+    width: 70%; 
     max-height: 60vh;
     object-fit: contain;
     border-radius: 18px;
     box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-    transition: transform 0.3s ease; /* animation légère au hover */
+    transition: transform 0.3s ease;
 }
 
 .poster:hover {
@@ -102,11 +102,11 @@ button {
     border: none;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease; /* animation légère ajoutée */
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.05); /* effet au hover */
+    transform: scale(1.05);
     background: linear-gradient(90deg, #007a3d, #ce1126);
 }
 
@@ -121,7 +121,7 @@ button:hover {
     border: 2px solid white;
 }
 
-/* 🍉 ANIMATION PASTEQUE */
+/* 🍉 ANIMATION PASTEQUE + 🇵🇸 */
 .watermelon {
     position: fixed;
     top: -50px;
@@ -157,7 +157,7 @@ button:hover {
 
 <div class="container">
 
-<img src="https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/12EC9/production/_131731577_palestine3.png.webp" class="poster">
+<img src="https://i.ibb.co/v6v8vbXh/Design-sans-titre.png" class="poster">
 
 <div class="info">
     <h1 id="date">Janvier / Février 2026</h1>
@@ -252,13 +252,18 @@ function telechargerTicket(){
     alert("QR code téléchargé ! Vous pouvez l'imprimer ou le montrer à l'entrée.");
 }
 
-/* 🎨 ANIMATION PASTEQUE */
-for(let i=0;i<15;i++){
-    let wm=document.createElement("div");
-    wm.className="watermelon";
-    wm.innerHTML="🍉";
-    wm.style.left=Math.random()*100+"vw";
-    wm.style.animationDuration=(8+Math.random()*10)+"s";
+/* 🎨 ANIMATION PASTEQUE + PALESTINE 🇵🇸 */
+for(let i=0;i<20;i++){
+    let wm = document.createElement("div");
+    wm.className = "watermelon";
+
+    // 🍉 ou 🇵🇸 aléatoirement
+    wm.innerHTML = Math.random() > 0.5 ? "🍉" : "🇵🇸";
+
+    wm.style.left = Math.random() * 100 + "vw";
+    wm.style.animationDuration = (8 + Math.random() * 10) + "s";
+    wm.style.fontSize = (24 + Math.random() * 12) + "px";
+
     document.body.appendChild(wm);
 }
 </script>
